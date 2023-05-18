@@ -4,8 +4,10 @@ public class Cat {
 
 	String nikname;
 	String color;
+	String breed;
 	double weight;
 	int age;
+	
 
 	public Cat() {
 		super();
