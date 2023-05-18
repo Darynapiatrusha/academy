@@ -7,6 +7,7 @@ public class Cat {
 	String breed;
 	double weight;
 	int age;
+	double height;
 	
 
 	public Cat() {
