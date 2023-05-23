@@ -6,11 +6,11 @@ public class Main {
 		System.out.println("Hello World");
 		System.out.println('c');
 		System.out.println(10);
-		
+
 		int i = 1151;
-		
+
 		System.out.println(i);
- 
+
 	}
 
 }

@@ -4,11 +4,9 @@ public class Cat {
 
 	String nikname;
 	String color;
-	String breed;
+	
 	double weight;
 	int age;
-	double height;
-	
 
 	public Cat() {
 		super();
@@ -21,6 +19,8 @@ public class Cat {
 		this.weight = weight;
 		this.age = age;
 	}
+	
+	
 
 	public void sleep() {
 		System.out.println(nikname + " спит");
