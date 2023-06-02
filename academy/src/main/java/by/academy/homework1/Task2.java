@@ -42,8 +42,6 @@ public class Task2 {
 			break;
 
 		default:
-			System.out.println("Введите переменную");
-			var variable = sc.next();
 			System.out.println("Unsupported type");
 		}
 

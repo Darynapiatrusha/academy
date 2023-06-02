@@ -9,6 +9,9 @@ public class Task1 {
 
 		System.out.println("Введите номер дня");
 		int numberOfDay = sc.nextInt();
+		
+		sc.close();
+		
 
 		switch (numberOfDay) {
 		case 1:

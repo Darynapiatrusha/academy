@@ -28,7 +28,6 @@ public class Task1 {
 
 		BigDecimal percent1 = new BigDecimal("0.95");
 		BigDecimal percent2 = new BigDecimal("0.93");
-		BigDecimal percent3 = new BigDecimal("0.88");
 		BigDecimal percent4 = new BigDecimal("0.85");
 		BigDecimal percent5 = new BigDecimal("0.80");
 		BigDecimal newPercent3 = new BigDecimal("0.84");
