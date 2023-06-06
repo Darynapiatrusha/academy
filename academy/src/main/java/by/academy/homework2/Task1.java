@@ -24,7 +24,7 @@ public class Task1 {
 			return false;
 		}
 
-		int[] letters = new int[1256];
+		int[] letters = new int[2048];
 
 		for (int i = 0; i < firstWord.length(); i++) {
 			char c = firstWord.charAt(i);
