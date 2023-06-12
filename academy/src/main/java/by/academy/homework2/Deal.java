@@ -16,13 +16,14 @@ public class Deal {
 			System.out.println("Введите количество игроков: ");
 
 			if (sc.hasNextInt()) {
-				players = sc.nextInt();
 
-				if (cardsPerPlayer * players <= cards && players != 0) {
+				players = sc.nextInt();
+				if (cardsPerPlayer * players <= cards && players > 0) {
 					break;
 				} else {
 					if (players == 0) {
-						System.out.println("Игра прекращена, недостаточно игроков");
+
+						System.out.println("Игра прекращена.");
 
 					} else if (players < 0) {
 
@@ -33,11 +34,11 @@ public class Deal {
 						System.out.println("Слишком много игроков!");
 					}
 				}
+
 			} else {
 				System.out.println("Вы ввели не число, или Ваше число слишком большое!");
-				break;
+
 			}
-			sc.close();
 		}
 
 		String[] deck = new String[cards];
