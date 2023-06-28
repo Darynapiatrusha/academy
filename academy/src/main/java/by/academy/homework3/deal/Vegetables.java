@@ -65,7 +65,7 @@ public class Vegetables extends Product {
 
 	@Override
 	public String toString() {
-		return "Наименование продукта: " + name + " цена продукта: " + price + " количество продукта: " + quantity
-				+ " страна поставщик: " + countryOfProducer + " сорт продукта: " + sort;
+		return "Name of product: " + name + ", price: " + price + ", quantity: " + quantity
+				+ ", country of producer: " + countryOfProducer + ", sort: " + sort;
 	}
 }

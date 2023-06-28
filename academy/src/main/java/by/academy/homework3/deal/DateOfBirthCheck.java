@@ -1,26 +1,40 @@
 package by.academy.homework3.deal;
 
-import java.util.Scanner;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class DateOfBirthCheck implements Validator {
-	private static final Pattern pattern = Pattern
-			.compile("^(0[1-9]|[12]\\d|3[01])(/|-)(0[1-9]|1[0-2])(/|-)(([1-2]\\d{3}))$");
+public class DateOfBirthCheck {
+	public static final Pattern DATE_FORMAT_DD_MM_YYYY_1 = Pattern
+			.compile("^(0[1-9]|[12]\\d|3[01])-(0[1-9]|1[0-2])-(([1-2]\\d{3}))$");
+	public static final Pattern DATE_FORMAT_DD_MM_YYYY_2 = Pattern
+			.compile("^(0[1-9]|[12]\\d|3[01])/(0[1-9]|1[0-2])/(([1-2]\\d{3}))$");
 
-	public DateOfBirthCheck() {
-		super();
+	private static final DateTimeFormatter FORMATTER_1 = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+	private static final DateTimeFormatter FORMATTER_2 = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
+	public static boolean isValidDate(String p) {
+		return isValidDate1(p) || isValidDate2(p);
 	}
 
-	@Override
-	public Pattern getPattern() {
-		return pattern;
+	private static boolean isValidDate1(String p) {
+		Matcher matcher1 = DATE_FORMAT_DD_MM_YYYY_1.matcher(p);
+		return matcher1.matches();
 	}
 
-	public static void Main(String[] agrs) {
-		Scanner sc = new Scanner(System.in);
-		String date = sc.next();
-		sc.close();
-		DateOfBirthCheck dateOfBirthCheck = null;
-		dateOfBirthCheck.isValid(date);
+	private static boolean isValidDate2(String p) {
+		Matcher matcher2 = DATE_FORMAT_DD_MM_YYYY_2.matcher(p);
+		return matcher2.matches();
+	}
+
+	public static LocalDate parse(String date) {
+		if (isValidDate1(date)) {
+			return LocalDate.parse(date, FORMATTER_1);
+		}
+		if (isValidDate2(date)) {
+			return LocalDate.parse(date, FORMATTER_2);
+		}
+		return null;
 	}
 }

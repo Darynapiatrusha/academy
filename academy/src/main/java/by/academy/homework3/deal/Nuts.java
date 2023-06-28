@@ -66,7 +66,7 @@ public class Nuts extends Product {
 
 	@Override
 	public String toString() {
-		return "Наименование продукта: " + name + " цена продукта: " + price + " количество продукта: " + quantity
-				+ " страна поставщик: " + countryOfProducer + " вид продукта: " + sort;
+		return "Name of product: " + name + ", price: " + price + ", quantity: " + quantity
+				+ ", country of producer: " + countryOfProducer + ", sort: " + sort;
 	}
 }

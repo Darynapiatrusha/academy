@@ -70,6 +70,6 @@ public abstract class Product {
 
 	@Override
 	public String toString() {
-		return "Наименование продукта: " + name + ", цена продукта: " + price + ", количество: " + quantity;
+		return "Name of product: " + name + ", price: " + price + ", quantity: " + quantity;
 	}
 }

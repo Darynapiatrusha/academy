@@ -10,7 +10,7 @@ public class Deal {
 	private User seller;
 	private Product[] products;
 	private int index = 0;
-	private LocalDate deadLineDate = LocalDate.now().plusDays(10);
+	protected LocalDate deadLineDate = LocalDate.now().plusDays(10);
 
 	public Deal() {
 		super();
@@ -39,6 +39,12 @@ public class Deal {
 		Product[] temp = new Product[(products.length * 2) + 1];
 		System.arraycopy(products, 0, temp, 0, products.length);
 		products = temp;
+	}
+
+	public void print() {
+		for (int i = 0; i < index; i++) {
+			System.out.println(i + ".(" + products[i] + " )");
+		}
 	}
 
 	public void addProduct(Product p) {
@@ -92,6 +98,10 @@ public class Deal {
 		this.products = products;
 	}
 
+	public LocalDate getDeadLineDate() {
+		return deadLineDate;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -117,7 +127,7 @@ public class Deal {
 
 	@Override
 	public String toString() {
-		return "Ппокупатель: " + buyer + ", продавец: " + seller + ", продукты: " + Arrays.toString(products)
+		return "Buyer: " + buyer + ", seller: " + seller + ", products: " + Arrays.toString(products) + ", deadline: "
 				+ deadLineDate;
 	}
 }
