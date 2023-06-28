@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class Nuts extends Product {
 	private String countryOfProducer;
-	private String sort;
+	private String varieties;
 
 	public Nuts() {
 		super();
@@ -14,15 +14,15 @@ public class Nuts extends Product {
 		super(name, price, quantity);
 	}
 
-	public Nuts(String name, double price, double quantity, String countryOfProducer, String sort) {
+	public Nuts(String name, double price, double quantity, String countryOfProducer, String varieties) {
 		super(name, price, quantity);
 		this.countryOfProducer = countryOfProducer;
-		this.sort = sort;
+		this.varieties = varieties;
 	}
 
 	@Override
 	protected double discount() {
-		if (countryOfProducer == "Беларусь" && sort == "Соленые") {
+		if (countryOfProducer == "China" && varieties == "salted") {
 			return 0.7;
 		}
 		return 1;
@@ -37,18 +37,18 @@ public class Nuts extends Product {
 	}
 
 	public String getSort() {
-		return sort;
+		return varieties;
 	}
 
 	public void setSort(String sort) {
-		this.sort = sort;
+		this.varieties = sort;
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = super.hashCode();
-		result = prime * result + Objects.hash(countryOfProducer, sort);
+		result = prime * result + Objects.hash(countryOfProducer, varieties);
 		return result;
 	}
 
@@ -61,12 +61,12 @@ public class Nuts extends Product {
 		if (getClass() != obj.getClass())
 			return false;
 		Nuts other = (Nuts) obj;
-		return Objects.equals(countryOfProducer, other.countryOfProducer) && sort == other.sort;
+		return Objects.equals(countryOfProducer, other.countryOfProducer) && varieties == other.varieties;
 	}
 
 	@Override
 	public String toString() {
 		return "Name of product: " + name + ", price: " + price + ", quantity: " + quantity
-				+ ", country of producer: " + countryOfProducer + ", sort: " + sort;
+				+ ", country of producer: " + countryOfProducer + ", varieties: " + varieties;
 	}
 }

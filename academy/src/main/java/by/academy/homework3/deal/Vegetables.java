@@ -21,7 +21,7 @@ public class Vegetables extends Product {
 	}
 
 	protected double discount() {
-		if (quantity > 5 && countryOfProducer == "Беларусь") {
+		if (quantity > 5 && countryOfProducer == "Бelarus") {
 			return 0.85;
 		}
 		return 1;

@@ -24,15 +24,19 @@ public class Menu {
 				return;
 			case 1:
 				addProduct();
+				System.out.println("Product is added");
 				break;
 			case 2:
 				createSeller();
+				System.out.println("Seller is created");
 				break;
 			case 3:
 				createBuyer();
+				System.out.println("Buyer is created");
 				break;
 			case 4:
 				removeProduct();
+				System.out.println("Product is romoved");
 				break;
 			case 5:
 				printProducts();
@@ -41,7 +45,7 @@ public class Menu {
 				deal();
 				break;
 			default:
-				System.out.println("Ошибка! Попробуйте еще раз!");
+				System.out.println("Wrong choice, please try again!");
 				break;
 			}
 		} while (choice != 0);
@@ -116,38 +120,42 @@ public class Menu {
 		String type = sc.next();
 		System.out.println("Enter " + type + " name: ");
 		String name = sc.next();
-		System.out.println("Enter " + type + " price: ");
+		System.out.println("Enter " + name + " price: ");
 		double price = sc.nextDouble();
-		System.out.println("Enter " + type + " quantity: ");
+		System.out.println("Enter " + name + " quantity: ");
 		double quantity = sc.nextDouble();
-		System.out.println("Enter " + type + " country of producer ");
+		System.out.println("Enter " + name + " country of producer ");
 		String countryOfProducer = sc.next();
-		System.out.println("Enter " + type + " sort ");
-		String sort = sc.next();
 
 		switch (type) {
 		case "Vegetables":
+			System.out.println("Enter " + name + " sort ");
+			String sort = sc.next();
 			deal.addProduct(new Vegetables(name, price, quantity, countryOfProducer, sort));
 			break;
 		case "Fruits":
-			deal.addProduct(new Fruits(name, price, quantity, countryOfProducer, sort));
+			System.out.println("Enter " + name + " color ");
+			String color = sc.next();
+			deal.addProduct(new Fruits(name, price, quantity, countryOfProducer, color));
 			break;
 		case "Nuts":
-			deal.addProduct(new Nuts(name, price, quantity, countryOfProducer, sort));
+			System.out.println("Enter " + name + " varieties ");
+			String varieties = sc.next();
+			deal.addProduct(new Nuts(name, price, quantity, countryOfProducer, varieties));
 			break;
 		default:
-			System.out.println("ry again");
+			System.out.println("Wrong type of products, please try again");
 		}
 	}
 
 	public void printMenu() {
-		System.out.println("Make some choice");
-		System.out.println("0 - Exit program");
-		System.out.println("1 - Add product");
-		System.out.println("2  - Set seller");
-		System.out.println("3 - Set buyer");
-		System.out.println("4 - Remove products");
-		System.out.println("5 - Print products");
-		System.out.println("6 - deal");
+		System.out.println("choose one of the following option ");
+		System.out.println("Enter 0 to exit of the program");
+		System.out.println("Enter 1 to add products to the deal");
+		System.out.println("Enter 2 to add information about the seller of the deal");
+		System.out.println("Enter 3 to add information about the buyer of the deal");
+		System.out.println("Enter 4 to romove product from the deal");
+		System.out.println("Enter 5 to print information about products of the deal");
+		System.out.println("Enter 6 to print information about the deal");
 	}
 }

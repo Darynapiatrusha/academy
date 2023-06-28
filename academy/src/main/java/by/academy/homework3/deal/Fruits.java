@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class Fruits extends Product {
 	private String countryOfProducer;
-	private String sort;
+	private String color;
 
 	public Fruits() {
 		super();
@@ -14,10 +14,10 @@ public class Fruits extends Product {
 		super(name, price, quantity);
 	}
 
-	public Fruits(String name, double price, double quantity, String countryOfProducer, String sort) {
+	public Fruits(String name, double price, double quantity, String countryOfProducer, String color) {
 		super(name, price, quantity);
 		this.countryOfProducer = countryOfProducer;
-		this.sort = sort;
+		this.color = color;
 	}
 
 	@Override
@@ -37,18 +37,18 @@ public class Fruits extends Product {
 	}
 
 	public String getSort() {
-		return sort;
+		return color;
 	}
 
 	public void setSort(String sort) {
-		this.sort = sort;
+		this.color = sort;
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = super.hashCode();
-		result = prime * result + Objects.hash(countryOfProducer, sort);
+		result = prime * result + Objects.hash(countryOfProducer, color);
 		return result;
 	}
 
@@ -61,12 +61,12 @@ public class Fruits extends Product {
 		if (getClass() != obj.getClass())
 			return false;
 		Fruits other = (Fruits) obj;
-		return Objects.equals(countryOfProducer, other.countryOfProducer) && Objects.equals(sort, other.sort);
+		return Objects.equals(countryOfProducer, other.countryOfProducer) && Objects.equals(color, other.color);
 	}
 
 	@Override
 	public String toString() {
 		return "Name of product: " + name + ", price: " + price + ", quantity: " + quantity
-				+ ", country of producer: " + countryOfProducer + ", sort: " + sort;
+				+ ", country of producer: " + countryOfProducer + ", color: " + color;
 	}
 }
