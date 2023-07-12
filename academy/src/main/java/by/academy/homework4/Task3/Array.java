@@ -52,16 +52,25 @@ public class Array<T> {
 		System.out.println("Индекс последнего заполненого элемента: " + (--newSize));
 	}
 
-	public void remove(int index) {
+	public T[] remove(int index) {
 		if (index < 0 || index >= size) {
 			System.out.println("Такого элемента не существует");
 		}
-		System.arraycopy(array, index + 1, array, index, size - 1);
+		List<T> list = new ArrayList<>(Arrays.asList(array));
+		list.remove(index);
+
+		array = (T[]) list.toArray(new Object[list.size()]);
 		size--;
+		return array;
 	}
 
-	public void removeObj(T object) {
+	public T[] removeObj(T object) {
+		List<T> list = new ArrayList<>(Arrays.asList(array));
+		list.remove(object);
 
+		array = (T[]) list.toArray(new Object[list.size()]);
+		size--;
+		return array;
 	}
 
 	@Override

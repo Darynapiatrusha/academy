@@ -1,13 +1,13 @@
 package by.academy.homework4.Task2;
 
 public class Body {
-	static int i = 1;
-	Heart heart;
-	Lungs lungs;
+	private int i = 1;
+	private Body.Heart heart;
+	private Body.Lungs lungs;
 
-	public class Heart {
+	private class Heart {
 
-		public void live() {
+		private void live() {
 			while (i <= Integer.MAX_VALUE) {
 				if (i % 100 == 0) {
 					System.out.println("Knock-knock-knockin' on heaven's door");
@@ -17,9 +17,9 @@ public class Body {
 		}
 	}
 
-	public class Lungs {
+	private class Lungs {
 
-		public void live() {
+		private void live() {
 			while (i <= Integer.MAX_VALUE) {
 				if (i % 50 == 0 && i % 100 != 0) {
 					System.out.println("breathe in");
@@ -34,10 +34,8 @@ public class Body {
 
 	public Body() {
 		super();
-		Body.Heart heart = new Heart();
-		this.heart = heart;
-		Body.Lungs lungs = new Lungs();
-		this.lungs = lungs;
+		this.heart = new Body.Heart();
+		this.lungs = new Body.Lungs();
 
 	}
 
@@ -47,7 +45,6 @@ public class Body {
 			lungs.live();
 			i++;
 		}
-
 		System.out.println("You stand on the shore and feel the salty smell of the wind that blows from the sea. \r\n"
 				+ "And I believe that you are free, and life has only begun\r\n" + "");
 	}
