@@ -18,12 +18,13 @@ public class SimpleDateFormatDemo {
 			DateFormat format = new SimpleDateFormat("dd/MM/yyyy");
 
 			Date date = (Date) format.parse(inputDate);
+			
 			SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd");
-
 			System.out.println("День: " + simpleDateFormat.format(date));
+			
 			simpleDateFormat = new SimpleDateFormat("MM");
-
 			System.out.println("Месяц: " + simpleDateFormat.format(date));
+			
 			simpleDateFormat = new SimpleDateFormat("YYYY");
 			System.out.println("Год: " + simpleDateFormat.format(date));
 		}
@@ -31,12 +32,13 @@ public class SimpleDateFormatDemo {
 			DateFormat format = new SimpleDateFormat("dd-MM-yyyy");
 
 			Date date = (Date) format.parse(inputDate);
+			
 			SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd");
-
 			System.out.println("День: " + simpleDateFormat.format(date));
+			
 			simpleDateFormat = new SimpleDateFormat("MM");
-
 			System.out.println("Месяц: " + simpleDateFormat.format(date));
+			
 			simpleDateFormat = new SimpleDateFormat("YYYY");
 			System.out.println("Год: " + simpleDateFormat.format(date));
 

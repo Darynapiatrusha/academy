@@ -2,6 +2,9 @@ package by.academy.homework3.deal;
 
 import java.util.Objects;
 
+import by.academy.lesson15.Producer;
+
+@Producer(age = 0, country = { "" }, name = "Vegetables")
 public class Vegetables extends Product {
 	protected String countryOfProducer;
 	protected String sort;
@@ -65,7 +68,7 @@ public class Vegetables extends Product {
 
 	@Override
 	public String toString() {
-		return "Name of product: " + name + ", price: " + price + ", quantity: " + quantity
-				+ ", country of producer: " + countryOfProducer + ", sort: " + sort;
+		return "Name of product: " + name + ", price: " + price + ", quantity: " + quantity + ", country of producer: "
+				+ countryOfProducer + ", sort: " + sort;
 	}
 }

@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.Objects;
 
-public class Deal {
+public class Deal{
 
 	private User buyer;
 	private User seller;

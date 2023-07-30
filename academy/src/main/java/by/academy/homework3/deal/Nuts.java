@@ -1,8 +1,13 @@
 package by.academy.homework3.deal;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Nuts extends Product {
+import by.academy.lesson15.Producer;
+
+@Producer(age = 0, country = { "" }, name = "Nuts")
+public class Nuts extends Product implements Serializable {
+	private static final long serialVersionUID = 1L;
 	private String countryOfProducer;
 	private String varieties;
 
@@ -66,7 +71,7 @@ public class Nuts extends Product {
 
 	@Override
 	public String toString() {
-		return "Name of product: " + name + ", price: " + price + ", quantity: " + quantity
-				+ ", country of producer: " + countryOfProducer + ", varieties: " + varieties;
+		return "Name of product: " + name + ", price: " + price + ", quantity: " + quantity + ", country of producer: "
+				+ countryOfProducer + ", varieties: " + varieties;
 	}
 }

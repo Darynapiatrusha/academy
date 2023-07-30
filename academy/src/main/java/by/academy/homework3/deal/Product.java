@@ -1,9 +1,10 @@
 package by.academy.homework3.deal;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public abstract class Product {
-
+public abstract class Product implements Serializable{
+	private static final long serialVersionUID = 1L;
 	protected String name;
 	protected double price;
 	protected double quantity;

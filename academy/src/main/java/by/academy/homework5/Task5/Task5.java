@@ -7,7 +7,7 @@ import java.util.Map;
 public class Task5 {
 
 	public static void main(String[] args) {
-		String text = "какой-то рандомный текст для проыерки роботоспособности этой программы";
+		String text = "какой-то рандомный текст для проверки роботоспособности этой программы";
 
         Map<Character, Integer> map = new HashMap<>();
         for(int i = 0; i < text.length(); i++){
