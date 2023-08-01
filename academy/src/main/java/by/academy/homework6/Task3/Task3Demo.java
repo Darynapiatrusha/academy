@@ -38,6 +38,7 @@ public class Task3Demo {
 				try (ObjectOutputStream os = new ObjectOutputStream(
 						new BufferedOutputStream(new FileOutputStream(serializableObjectDemoFile)))) {
 					os.writeObject(users.get(i));
+					os.close();
 				}
 			} catch (IOException e) {
 				System.out.println(e);

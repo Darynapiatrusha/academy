@@ -27,6 +27,8 @@ public class Task2 {
 					fileOut.write(a);
 				}
 			}
+			fileIn.close();
+			fileOut.close();
 		} catch (IOException e) {
 			System.out.println(e);
 		}

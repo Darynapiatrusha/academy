@@ -18,9 +18,11 @@ public class Task1 {
 				if (str.compareTo("stop") == 0)
 					break;
 				fw.write(str);
+				fw.close();
 			} while (str.compareTo("stop") != 0);
 		} catch (IOException e) {
 			System.out.println(e);
 		}
+		br.close();
 	}
 }
