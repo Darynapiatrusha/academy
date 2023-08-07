@@ -3,17 +3,15 @@ package by.academy.homework7.Task2;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.time.LocalDate;
 import java.util.Arrays;
-import java.util.Scanner;
 
 public class UserDemo {
 
 	public static void main(String[] args) {
 		Class<User> usersClass = User.class;
-
+		User user1 = new User("alalal", "password", "test@mail.ru",  "Daryna", "Petrysha", 23, 14, 01, 2000);
 		try {
-			Method method = usersClass.getMethod("getFirstName");
+			Method method = usersClass.getMethod("printUserInfo");
 			System.out.println("Method: " + method);
 			System.out.println();
 
@@ -21,10 +19,10 @@ public class UserDemo {
 			System.out.println("Methods: " + Arrays.toString(methods));
 			System.out.println();
 
-//			Field field = usersClass.getField("login");
-//			System.out.println("GetField: " + field);
-//			System.out.println();
-//
+			Field fieldInfo = usersClass.getField("firstName");
+			System.out.println("GetField: " + fieldInfo);
+			System.out.println();
+
 			Field[] fields = usersClass.getFields();
 			System.out.println("GetFields: " + Arrays.toString(fields));
 			System.out.println();
@@ -44,15 +42,11 @@ public class UserDemo {
 			Field[] declaredFields = usersClass.getDeclaredFields();
 			System.out.println("getDeclaredFields: " + Arrays.toString(declaredFields));
 			System.out.println();
-
-		} catch (NoSuchMethodException | SecurityException | NoSuchFieldException e) {
-			e.printStackTrace();
-		}
-		User user1 = new User();
-		Class<User> userClass = User.class;
-		try {
-			Field firstNameFields = usersClass.getField("firstName");
-			Field lastNameFields = usersClass.getField("lastName");
+			
+			Field firstNameFields = usersClass.getSuperclass().getDeclaredField("firstName");
+			Field lastNameFields = usersClass.getSuperclass().getDeclaredField("lastName");
+			firstNameFields.setAccessible(true);
+			lastNameFields.setAccessible(true);
 			firstNameFields.set(user1, "Darina");
 			lastNameFields.set(user1, "Petrusha");
 
@@ -65,8 +59,9 @@ public class UserDemo {
 			System.out.println();
 			Method toString = usersClass.getDeclaredMethod("toString");
 			System.out.println(toString.invoke(user1));
-		} catch (SecurityException | IllegalArgumentException | IllegalAccessException | NoSuchMethodException
-				| InvocationTargetException | NoSuchFieldException e) {
+
+		} catch (NoSuchMethodException | SecurityException | NoSuchFieldException | IllegalArgumentException
+				| IllegalAccessException | InvocationTargetException e) {
 			e.printStackTrace();
 		}
 

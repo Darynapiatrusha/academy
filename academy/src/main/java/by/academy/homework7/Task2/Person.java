@@ -5,20 +5,20 @@ import java.util.Objects;
 
 public class Person {
 	public String firstName;
-	public String lastName;
-	protected int age;
-	protected LocalDate dateOfBirth;
+	private String lastName;
+	private int age;
+	private LocalDate dateOfBirth;
 
 	public Person() {
 		super();
 	}
 
-	public Person(String firstName, String lastName, int age, LocalDate dateOfBirth) {
+	public Person(String firstName, String lastName, int age, int day, int month, int year) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.age = age;
-		this.dateOfBirth = dateOfBirth;
+		this.dateOfBirth = LocalDate.of(year, month, day);
 	}
 
 	public String getFirstName() {

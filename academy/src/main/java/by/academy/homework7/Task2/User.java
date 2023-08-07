@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.util.Objects;
 
 public class User extends Person {
-	protected String login;
+	private String login;
 	private String password;
 	private String email;
 
@@ -19,20 +19,18 @@ public class User extends Person {
 		this.email = email;
 	}
 
-	public User(String login, String password, String email, String firstName, String lastName, int age,
-			LocalDate dateOfBirth) {
-		super();
+	public User(String login, String password, String email, String firstName, String lastName, int age, int year,
+			int month, int day) {
+		super(firstName, lastName, age, year, month, day);
 		this.login = login;
 		this.password = password;
 		this.email = email;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.age = age;
-		this.dateOfBirth = dateOfBirth;
 	}
 
 	public void printUserInfo() {
-		System.out.println("User info: login - " + login + ", password -  " + password + ", email - " + email);
+		System.out.println("User info: login - " + login + ", password -  " + password + ", email - " + email
+				+ ", last name - " + getLastName() + ", first name - " + getFirstName() + ", age - " + getAge()
+				+ ", date of birth -  " + getDateOfBirth());
 	}
 
 	public String getLogin() {
@@ -82,8 +80,7 @@ public class User extends Person {
 
 	@Override
 	public String toString() {
-		return "User [login=" + login + ", password=" + password + ", email=" + email + ", firstName=" + firstName
-				+ ", lastName=" + lastName + ", age=" + age + ", dateOfBirth=" + dateOfBirth + "]";
+		return "User [login=" + login + ", password=" + password + ", email=" + email +  ", last name - " + getLastName() + ", first name - " + getFirstName() + ", age - " + getAge()
+		+ ", date of birth -  " + getDateOfBirth();
 	}
-
 }
