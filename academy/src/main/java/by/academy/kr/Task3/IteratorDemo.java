@@ -24,26 +24,22 @@ public class IteratorDemo {
 		}
 
 		ArrayList<String> str2 = new ArrayList<>();
-		for (int i = 10; i >= 0; i--) {
+		for (int i = 0; i <= 10; i++) {
 			str2.add("alalal " + i);
 		}
 
-		ArrayList<Iterator> iterators = new ArrayList<>();
+		Iterator<Integer> itetator1 = petrov.iterator();
+		Iterator<Integer> itetator2 = sidorov.iterator();
+		Iterator<String> itetator3 = str.iterator();
+		Iterator<String> itetator4 = str2.iterator();
 
-		IteratorSimple<Integer> itetator1 = new IteratorSimple<>(petrov);
-		IteratorSimple<Integer> itetator2 = new IteratorSimple<>(sidorov);
-		IteratorSimple<String> itetator3 = new IteratorSimple<>(str);
-		IteratorSimple<String> itetator4 = new IteratorSimple<>(str2);
-		iterators.add(itetator1);
-		iterators.add(itetator2);
-		iterators.add(itetator3);
-		iterators.add(itetator4);
+		Iterator[] arrayOfIterators = { itetator1, itetator2, itetator3, itetator4 };
 
-		IteratorOfIterators<Iterator> mainIterator = new IteratorOfIterators<>(iterators);
-		Iterator value;
+		@SuppressWarnings("unchecked")
+		IteratorOfIterators<Iterator> mainIterator = new IteratorOfIterators<>(arrayOfIterators);
+
 		while (mainIterator.hasNext()) {
-			value = mainIterator.next();
-			System.out.println(value);
+			System.out.println(mainIterator.next());
 		}
 	}
 }
