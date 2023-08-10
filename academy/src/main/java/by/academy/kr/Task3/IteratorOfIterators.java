@@ -23,10 +23,10 @@ public class IteratorOfIterators<T> implements Iterator<T> {
 
 	@Override
 	public T next() {
-		if (arrayOfIterators[index].hasNext() || arrayOfIterators[++index].hasNext()) {
+		while (arrayOfIterators[index].hasNext() || arrayOfIterators[++index].hasNext()) {
 			return arrayOfIterators[index].next();
-		} else {
-			return null;
 		}
+		return arrayOfIterators[++index].next();
 	}
+
 }

@@ -19,9 +19,9 @@ public class IteratorDemo {
 		}
 
 		ArrayList<String> str = new ArrayList<>();
-		for (int i = 0; i < 10; i++) {
-			str.add("hello " + i);
-		}
+//		for (int i = 0; i < 10; i++) {
+//			str.add("hello " + i);
+//		}
 
 		ArrayList<String> str2 = new ArrayList<>();
 		for (int i = 0; i <= 10; i++) {
